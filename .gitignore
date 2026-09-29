@@ -21,6 +21,7 @@
 *.gcno
 *.gz
 *.i
+*.jar
 *.ko
 *.ll
 *.lst
@@ -39,6 +40,7 @@
 *.symtypes
 *.tar
 *.xz
+*.zip
 Module.symvers
 modules.builtin
 
@@ -129,3 +131,9 @@ kernel/configs/android-*.cfg
 #Ignoring Android.bp link file
 #
 Android.bp
+
+# Build dependencies
+AnyKernel3
+error.log
+neutron-clang/
+out/
