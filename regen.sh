@@ -1,18 +1,11 @@
 #!/bin/bash
-set -euo pipefail
 
-DEFCONFIG="xcalibur-perf_defconfig"
-DEFCONFIG_PATH="arch/arm64/configs/vendor/${DEFCONFIG}"
+DEFCONFIG="vendor/xcalibur-perf_defconfig"
 
-export ARCH=arm64
-export SUBARCH=arm64
+make -j"$(nproc --all)" O=out ARCH=arm64 SUBARCH=arm64 "$DEFCONFIG"
 
-mkdir -p out
+cp -af out/.config arch/arm64/configs/"$DEFCONFIG"
 
-make -j"$(nproc --all)" O=out "vendor/${DEFCONFIG}"
-make -j"$(nproc --all)" O=out savedefconfig
-cp -af out/defconfig "${DEFCONFIG_PATH}"
-
-git add "${DEFCONFIG_PATH}"
-git commit -m "arm64: configs: vendor: xcalibur-perf: Regenerate"
-echo -e "\nSuccessfully regenerated defconfig at ${DEFCONFIG_PATH}"
+git add arch/arm64/configs/"${DEFCONFIG}"
+git commit -m "ARM64: configs: vendor: Regenerate defconfig"
+echo -e "\nSuccessfully regenerated defconfig at $DEFCONFIG"
