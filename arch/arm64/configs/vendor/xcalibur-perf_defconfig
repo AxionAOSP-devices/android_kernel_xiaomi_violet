@@ -5926,24 +5926,6 @@ CONFIG_SBITMAP=y
 # CONFIG_STRING_SELFTEST is not set
 
 #
-# Tech packages
-#
-
-#
-# Techpack audio options
-#
-CONFIG_SND_SOC_TAS2563=y
-CONFIG_TAS2563_CODEC=y
-CONFIG_TAS2563_MISC=y
-CONFIG_TAS2563_REGMAP=y
-
-#
-# RmNet extensions
-#
-CONFIG_RMNET_PERF=y
-CONFIG_RMNET_SHS=y
-
-#
 # Xiaomi configuration options
 #
 CONFIG_MACH_XIAOMI=y
@@ -5968,7 +5950,13 @@ CONFIG_MACH_XIAOMI_VIOLET=y
 #
 # Techpack audio options
 #
+CONFIG_SND_SOC_TAS2563=y
+CONFIG_TAS2563_CODEC=y
+CONFIG_TAS2563_MISC=y
+CONFIG_TAS2563_REGMAP=y
 
 #
 # RmNet extensions
 #
+CONFIG_RMNET_PERF=y
+CONFIG_RMNET_SHS=y
